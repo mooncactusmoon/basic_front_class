@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JQ練習1</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+        integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-4">
+                <h3>品名A</h3>
+                <p id="cost">$</p>
+                <p class="textP">30Lorem ipsum dolor sit amet.</p>
+                <input type="number" name="num1" id="num1" placeholder="數量" value="0" min="0">
+                <input type="hidden" id="price1" value="30">
+            </div>
+            <div class="col-4">
+                <h3>品名B</h3>
+                <p id="cost2">$</p>
+                <p class="textP">55Lorem ipsum dolor sit amet.</p>
+                <input type="number" name="num2" id="num2" placeholder="數量" value="0" min="0">
+                <input type="hidden" id="price2" value="55">
+            </div>
+            <div class="col-4">
+                <h3>品名C</h3>
+                <p id="cost3">$</p>
+                <p class="textP">100Lorem ipsum dolor sit amet.</p>
+                <input type="number" name="num3" id="num3" placeholder="數量" value="0" min="0">
+                <input type="hidden" id="price3" value="100">
+            </div>
+           
+        </div>
+        <div class="row mt-5 justify-content-center">
+            <input type="text" name="name" id="name" placeholder="姓名">
+            <input type="text" name="add" id="add" placeholder="地址" class="mx-2">
+            <button class="sub btn btn-info">送出</button>
+        </div>
+      
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js"
+        integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2" crossorigin="anonymous">
+    </script>
+
+    <script>
+        $("h3").click(function(){
+            $(this).css("color","red");
+
+        });
+        $(".textP").on({
+            mouseenter: function(){
+                $(this).css("color","red");
+            },
+            mouseout: function(){
+                $(this).css('color','black');
+            }
+        });
+        
+        $("#num1").focus();
+        $(".sub").on('click',function(){
+            let form={
+                num1:parseInt($("#num1").val()),
+                num2:parseInt($("#num2").val()),
+                num3:parseInt($("#num3").val()),
+                price1:parseInt($("#price1").val()),
+                price2:parseInt($("#price2").val()),
+                price3:parseInt($("#price3").val()),
+                name:$("#name").val(),
+                add:$("#add").val(),
+            };
+            console.log(form);
+            $.post('jq_test_01_get.php',form,()=>{
+                alert("已成功送出");
+            });
+        });
+    </script>
+</body>
+
+</html>
