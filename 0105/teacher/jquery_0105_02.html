@@ -139,58 +139,6 @@
                 console.log("total", total);
             });
 
-            // 滑鼠移入事件
-            $('#mouseenterP').on('mouseenter', function () {
-                console.log('mouseenter');
-            });
-
-            // 滑鼠移出事件
-            $('#mouseoutP').on('mouseout', function () {
-                console.log('mouseout');
-            });
-
-
-            // 滑鼠移入事件1
-            // $('#mouseEvent').on('mouseenter', function () {
-            //     console.log('mouseenter');
-            // });
-
-            // // 滑鼠移出事件2
-            // $('#mouseEvent').on('mouseout', function () {
-
-            // });
-
-            // // 滑鼠移出事件3
-            // $('#mouseEvent').on('mouseup', function () {
-
-            // });
-
-            // 合併
-            // $('#mouseEvent').on('mouseup', function () {
-
-            // });
-
-            $("#mouseEvent").on({
-                mouseenter: function () {
-                    $(this).css("background-color", "lightgray");
-                    console.log('mouseout');
-
-                    // off 全部事件 
-                    // $('#mouseEvent').off();
-                    // off 單一事件
-                    // $('#mouseEvent').off('mouseenter');
-                },
-                mouseout: function () {
-                    $(this).css("background-color", "lightblue");
-                    console.log('mouseup');
-                },
-                mouseup: function () {
-                    $(this).css("background-color", "yellow");
-                    console.log('mouseup');
-                }
-            });
-
-
             // hover
             // hover(fun1,fun2)
             $('#hoverEvent').hover(
