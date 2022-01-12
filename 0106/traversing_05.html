@@ -82,11 +82,29 @@
                 $(this).parentsUntil('form').find('tbody').find('tr').last().after(cloneData);
                 $(this).parentsUntil('form').find('tbody').find('tr').last().find('input:text').val("");
                 // $(this).parentsUntil('form').find('tbody').find('tr').last().find('input:number').val(0);
+
+                $(this).parentsUntil('form').find('tbody').find('tr').last().find('input[type="text"]').val("123");
+                $(this).parentsUntil('form').find('tbody').find('tr').last().find('input[type="number"]').val("456");
             });
 
             $('.delBtn').click(function(){
-                console.log('delBtn');
-                $(this).parent().closest('tr').remove();
+                // console.log('delBtn');
+                // $(this).parent().closest('tr').remove();
+
+                // 第一欄不可刪除-方法一
+                // trLength=$(this).parentsUntil('table').find('tr').length;
+                // console.log('trLength',trLength);
+
+                // if(trLength >1){
+                //     $(this).parent().closest('tr').remove();
+                // }
+
+                // 第一欄不可刪除-方法二 index
+                trIndex= $(this).parent().closest('tr').index();
+                console.log(trIndex);
+                if(trIndex !=0){
+                    $(this).parent().closest('tr').remove();
+                }
             });
 
 
