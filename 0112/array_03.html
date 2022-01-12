@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>array02</title>
+    <title>array03</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
         integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
     <style>
@@ -17,7 +17,7 @@
 
 <body>
    
-    <table class="table">
+    <!-- <table class="table">
         <thead>
           <tr>
             <th scope="col">id</th>
@@ -34,7 +34,7 @@
  
       
         </tbody>
-      </table>
+      </table> -->
 
     <!-- 先載入 -->
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
@@ -56,7 +56,7 @@
             //建立salary => 50000 60000 70000 
             //建立project => [a,b] [b,c] [d,e]
             
-            const employeeData=[
+            const dataNew=[
                 {   
                     'name':'amy',
                     'id':1,
@@ -64,7 +64,12 @@
                     'mobile':"0911XXXXXX",
                     'bonus':1000,
                     'salary':'50000',
-                    'project':['a','b'],
+                    'project':['a','b','c'],
+                    'dataFun':function(){
+                        console.log('hello datafun');
+                        console.log('hello ' + this.name);
+                        return `hi ${this.name}`;
+                    }
                 },
                 {
                     'name':'bob',
@@ -73,7 +78,7 @@
                     'mobile':"0922XXXXXX",
                     'bonus':10000,
                     'salary':'60000',
-                    'project':['b','c'],
+                    'project':['b','c','g'],
                 },
                 {
                     'name':'cat',
@@ -82,43 +87,22 @@
                     'mobile':"0933XXXXXX",
                     'bonus':100000,
                     'salary':'70000',
-                    'project':['d','e'],
+                    'project':['d','e','f'],
                 },
             ]
-            console.log("employeeData",employeeData);
-            console.log(employeeData[1].name+'薪水'+employeeData[1].salary);
+            console.log("dataNew",dataNew);
+           
+            let total;
+            dataNew.forEach(function(value,index,array){
+                console.log(value);
+                total += value.sum;
+            });
 
-            let ob_length=employeeData.length;
-            console.log(ob_length);
-            for(let index=0 ; index < ob_length ;index++){
-                const element = employeeData[index];
-                tbodyString=`
-                <tr>
-                    <td>${element.id}</td>
-                    <td>${element.name}</td>
-                    <td>${element.address}</td>
-                    <td>${element.mobile}</td>
-                    <td>${element.salary}</td>
-                    <td>${element.bouns}</td>
-                    <td>
-                        ${element.project[0]}
-                        ${element.project[1]}
-                    </td>
-                    <td>${element.bouns * element.project.length}</td>
-                    <td>${element.bouns * element.project.length + employeeData[0].salary}</td>
-                </tr>
-                    `;
-                $('tbody').append(tbodyString);
-
-                //總sum數
-                let total=0;
-                for(let i=0; i <ob_length;i++){
-                    
-                }
-
-            }
-
+            console.log('total',total);
             
+            console.log('dataNew',dataNew);
+            
+        
 
         });
 
