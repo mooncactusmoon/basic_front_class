@@ -107,6 +107,48 @@
             //function(){}
             mapNewArr=ar.map(value=>value*100);
             console.log("mapNewArr :",mapNewArr)
+            
+            console.log('============================');
+            //ar=[1,3,5,7,9] =>[7,9]?
+            //forEach
+            NewA=[];
+            ar.forEach(function(value){
+                if(value>5){
+                    NewA.push(value);
+                }
+            });
+            console.log("NewA>",NewA);
+
+            //fitler
+            // filterArr=ar.filter(function(value){
+            //     return value>5;
+            // })
+            // console.log("filterArr>",filterArr);
+            //箭頭函式
+            filterArr=ar.filter(value=>value>5);
+            console.log("filterArr>",filterArr);
+            
+            //控制只出現第基數
+            filterAr=ar.filter((value,index)=>(index % 2 == 1));
+            console.log("filterAr>",filterAr);
+
+            //找到第一個大於五的數字
+            findAr=ar.find(value=>(value>5));
+            console.log('findAr =>',findAr);
+
+            //判斷array 是不是都小於10
+            everyAr=ar.every(value=>(value>10));
+            console.log("everyAr",everyAr);
+            
+            someAr= ar.some(value=>(value<10));
+            console.log("someAr",someAr);
+            
+            const reduceAr=ar.reduce((total,value)=>{
+                console.log("total",total);
+                return total +value;
+            },500)
+            console.log("reduceAr",reduceAr);
+
 
          
 
