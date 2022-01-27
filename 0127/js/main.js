@@ -1,4 +1,5 @@
 $(document).ready(function () {
+    console.log(":>");
     const navLinkList = document.querySelectorAll('.navbar .nav-link');
     const navbar = document.getElementById('navbar')
     const scrollReport = document.getElementById('scrollReport')
