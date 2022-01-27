@@ -28,7 +28,8 @@ $(document).ready(function () {
     window.addEventListener('scroll', function () {
         // console.log('window',window);
         const y = Math.round(window.scrollY + navbar.height()); //讓他變整數
-        scrollReport.html(`目前所在的位置${y}`); //這裡也要改***
+        // scrollReport.html(`目前所在的位置${y}`); //這裡也要改***
+        scrollReport.text('目前所在的位置'+y); //這裡也要改***
 
         for(const key in navigationTable){
             const link= navigationTable[key].link;
