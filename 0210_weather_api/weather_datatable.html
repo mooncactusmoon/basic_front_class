@@ -118,35 +118,8 @@
                     `);
 
                 }
-               //1.新北市
-                console.log('新北市',data[1]);
-                //時間一 : 新北市 天氣現象Wx + 最低溫度MinT + 最高溫度MaxT
-                let Wx1=data[1].weatherElement[0].time[0].parameter['parameterName'];
-                let Min1=data[1].weatherElement[2].time[0].parameter['parameterName'];
-                let Max1=data[1].weatherElement[1].time[0].parameter['parameterName'];
-
-                //時間二 : 新北市 天氣現象Wx + 最低溫度MinT + 最高溫度MaxT
-                let Wx2=data[1].weatherElement[0].time[1].parameter['parameterName'];
-                let Min2=data[1].weatherElement[2].time[1].parameter['parameterName'];
-                let Max2=data[1].weatherElement[1].time[1].parameter['parameterName'];
                 
-                //時間三 : 新北市 天氣現象Wx + 最低溫度MinT + 最高溫度MaxT
-                let Wx3=data[1].weatherElement[0].time[2].parameter['parameterName'];
-                let Min3=data[1].weatherElement[2].time[2].parameter['parameterName'];
-                let Max3=data[1].weatherElement[1].time[2].parameter['parameterName'];
-
-                // 把值丟到table
-                // $('tbody').append(`
-                // <tr>
-                //     <th>1</th>
-                //     <th>${data[1].locationName}</th> <!--${newTaipei['locationName']}-->
-                //     <th>天氣狀況 :${Wx1} <br>最低溫 : ${Min1} <br>最高溫 : ${Max1}</th>
-                //     <th>天氣狀況 :${Wx2} <br>最低溫 : ${Min2} <br>最高溫 : ${Max2}</th>
-                //     <th>天氣狀況 :${Wx3} <br>最低溫 : ${Min3} <br>最高溫 : ${Max3}</th>
-                // </tr>
-                // `);
-                
-
+                $('#table_id').DataTable();
             }
         })
     });
