@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>20220217_chart.js ani</title>
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+      integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+
+</head>
+
+<body>
+   <div class="cotainer">
+      <div class="row">
+         <div class="col-12">
+            <h3 class="text-center">chart.js</h3>
+         </div>
+      </div>
+   </div>
+   <div class="container mt-5">
+      <div class="row">
+         <div class="col-6">
+            <canvas id="myChart" style="width:100%;max-width:500px"></canvas>
+
+         </div>
+         <div class="col-6">
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Obcaecati autem quam facilis sequi qui natus
+               incidunt, voluptas eum cupiditate pariatur consequatur neque mollitia debitis ut repellendus ex
+               voluptatibus atque impedit rerum maiores porro minima omnis error! Voluptatem, velit ullam tempore
+               voluptas ratione odit quae alias. Odio vero libero provident nam doloremque, minus quod beatae vitae
+               deserunt aliquam quam pariatur ab nemo optio. Facere eos officiis et corrupti ut accusantium culpa
+               recusandae magni non iure, atque rem, aliquam labore. Exercitationem et, ipsa ducimus hic atque tempora
+               voluptas unde aspernatur, iure id dolorem explicabo labore aperiam quasi beatae. At accusantium modi
+               dolor?</p>
+         </div>
+
+      </div>
+   </div>
+   <div class="container mt-5">
+      <div class="row">
+         <div class="col-6">
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ratione nobis deleniti numquam minima est quibusdam odio necessitatibus. Sed sint, voluptatibus, magnam beatae, laudantium fugit accusantium similique neque velit eligendi saepe a nihil. Labore ab et rerum asperiores necessitatibus deserunt laborum modi sed temporibus quis ex, impedit officiis magnam facilis exercitationem suscipit porro itaque cum fugiat ducimus dolore sit saepe! Laboriosam, unde iste numquam quas architecto fugit aperiam saepe sit magnam soluta ipsa nam enim doloremque in eveniet, ullam cupiditate a excepturi harum rem vitae vero? Repellat qui iste exercitationem eius nulla! Nisi, odit iure nemo deserunt quas praesentium amet nesciunt.</p>
+         </div>
+         <div class="col-6">
+            <canvas id="myChart2"></canvas>
+
+         </div>
+      </div>
+   </div>
+
+
+   <!-- 先載入 -->
+   <!-- bs4 載入slim 缺少ajax與effects -->
+
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+      integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+      crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+   <!-- <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script> -->
+   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+      integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous">
+      </script>
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js"
+      integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2" crossorigin="anonymous">
+      </script>
+   <!-- 先載入 END-->
+   <!-- chart cdn -->
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js"
+      integrity="sha512-QSkVNOCYLtj73J4hbmVoOV6KVZuMluZlioC+trLpewV8qMjsWqlIQvkn1KGX2StWvPMdWGBqim1xlC8krl1EKQ=="
+      crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+   <!-- chart cdn end -->
+   <script>
+      //長條圖
+      const ctx = document.getElementById('myChart');
+      const myChart = new Chart(ctx, {
+         type: 'bar',
+         data: {
+            labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+            datasets: [{
+               label: '# of Votes',
+               data: [8, 15, 3, 5, 2, 9],
+               backgroundColor: [
+                  'rgba(255, 99, 132, 0.2)',
+                  'rgba(54, 162, 235, 0.2)',
+                  'rgba(255, 206, 86, 0.2)',
+                  'rgba(75, 192, 192, 0.2)',
+                  'rgba(153, 102, 255, 0.2)',
+                  'rgba(255, 159, 64, 0.2)'
+               ],
+               borderColor: [
+                  'rgba(255, 99, 132, 1)',
+                  'rgba(54, 162, 235, 1)',
+                  'rgba(255, 206, 86, 1)',
+                  'rgba(75, 192, 192, 1)',
+                  'rgba(153, 102, 255, 1)',
+                  'rgba(255, 159, 64, 1)'
+               ],
+               borderWidth: 1
+            }]
+         },
+         options: {
+            scales: {
+               y: {
+                  beginAtZero: true
+               }
+            }
+         }
+      });
+      //長條圖end
+
+      // 折線圖
+      const labels = [
+         'January',
+         'February',
+         'March',
+         'April',
+         'May',
+         'June',
+      ];
+
+      const data = {
+         labels: labels,
+         datasets: [{
+            label: 'My First dataset',
+            backgroundColor: 'rgb(255, 99, 132)',
+            borderColor: 'rgb(255, 99, 132)',
+            data: [0, 10, 5, 2, 20, 30, 45],
+         }]
+      };
+
+      const config = {
+         type: 'line',
+         data: data,
+         options: {}
+      };
+
+      const myChart2 = new Chart(
+         document.getElementById('myChart2'),
+         config
+      );
+   //折線圖end
+   </script>
+
+</body>
+
+</html>
