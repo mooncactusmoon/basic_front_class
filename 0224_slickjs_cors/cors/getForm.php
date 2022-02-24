@@ -3,5 +3,6 @@
 ?>
 <?php
    $input =$_POST;
-   dd($input);
+   // dd($input);
+   echo json_encode($input);
 ?>

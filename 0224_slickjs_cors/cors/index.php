@@ -15,7 +15,7 @@
    <div class="container">
       <h2>Bordered Table</h2>
       <p>The .table-bordered class adds borders on all sides of the table and the cells:</p>
-      <form action="./getForm.php" method="post">
+      <form action="./getForm.php" method="post" id="myForm">
          <table class="table table-bordered text-center">
             <thead>
                <tr>
@@ -49,6 +49,28 @@
    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous">
    </script>
    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js" integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2" crossorigin="anonymous">
+   </script>
+
+   <script>
+      $(document).ready(function() {
+         // alert("1231") 先確認是否載入成功
+         $('#myForm').submit(function(e) {
+            e.preventDefault();
+            
+            var form = $(this);
+            var url = form.attr('action');
+            $.ajax({
+               type: "post",
+               url: url,
+               data: form.serialize(),
+               dataType: 'json',
+               success:function(data){
+                  console.log(typeof(data));
+                  console.log(data);
+               }
+            })
+         })
+      });
    </script>
 </body>
 
