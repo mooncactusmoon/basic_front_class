@@ -24,6 +24,8 @@
       .slider {
          width: 50%;
          margin: 100px auto;
+         /* 新增置中 */
+         text-align: center;
       }
 
       .slick-slide {
@@ -36,7 +38,8 @@
 
       .slick-prev:before,
       .slick-next:before {
-         color: black;
+         /* color: black; */
+         color: pink;
       }
 
 
@@ -104,8 +107,8 @@
       </div>
       <div>
          <h3>10</h3>
-         <img src="http://fakeimg.pl/350x100?text=10"
-         <p>Lorem ipsum dolor sit amet consectetur.</p>>
+         <img src="http://fakeimg.pl/350x100?text=10">
+         <p>Lorem ipsum dolor sit amet consectetur.</p>
       </div>
    </section>
 
@@ -119,10 +122,10 @@
       $(document).ready(function () {
          $(".vertical-center-4").slick({
             dots: true,
-            // vertical: true, //垂直
+            // vertical: true, //垂直滑動
             // centerMode: true,
-            // slidesToShow: 4,
-            // slidesToScroll: 2
+            slidesToShow: 4,
+            slidesToScroll: 3
          });
       });
 
