@@ -24,8 +24,8 @@ curl_close($ch);
 echo $result;
 
 
-echo "<hr>";
-dd(json_decode($result));
+// echo "<hr>";
+// dd(json_decode($result));
 
 
 ?>
