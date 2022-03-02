@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>時鐘</title>
+   <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+   <div class="digiImg">
+      <div class="" id="ck1"></div>
+      <div class="" id="ck2"></div>
+      <div class="mgd"></div>
+      <div class="" id="ck3"></div>
+      <div class="" id="ck4"></div>
+      <div class="mgd"></div>
+      <div class="" id="ck5"></div>
+      <div class="" id="ck6"></div>
+   </div>
+
+   <script>
+      //const changeTime=()=>{
+      function changeTime() {
+         console.log("hello change time");
+         const nt = new Date();
+         console.log('nt', nt); //先抓時間
+         const nh = nt.getHours();
+         const nm = nt.getMinutes();
+         const ns = nt.getSeconds();
+
+         const nk1 = Math.floor(nh / 10);
+         const nk2 = nh % 10;
+
+         const nk3 = Math.floor(nm / 10);
+         const nk4 = nm % 10;
+
+         const nk5 = Math.floor(ns / 10);
+         const nk6 = ns % 10;
+
+         document.getElementById('ck1').className = `mg${nk1}`;
+         document.getElementById('ck2').className = `mg${nk2}`;
+         document.getElementById('ck3').className = `mg${nk3}`;
+         document.getElementById('ck4').className = `mg${nk4}`;
+         document.getElementById('ck5').className = `mg${nk5}`;
+         document.getElementById('ck6').className = `mg${nk6}`;
+
+         document.querySelectorAll('.mgd')[0].style.opacity=1;
+         document.querySelectorAll('.mgd')[1].style.opacity=1;
+         setTimeout(()=>{
+            document.querySelectorAll('.mgd')[0].style.opacity=0;
+            document.querySelectorAll('.mgd')[1].style.opacity=0;
+         }, 500);
+
+      }
+
+      setInterval(changeTime,1000); //執行function,設定時間1000=1s
+   </script>
+</body>
+
+</html>
